@@ -217,6 +217,7 @@ const Clientes = () => {
                 <th>Cliente</th>
                 <th>Tipo Doc.</th>
                 <th>N. Documento</th>
+                <th>Email</th>
                 <th>Teléfono</th>
                 <th>Ver</th>
               </tr>
@@ -228,6 +229,7 @@ const Clientes = () => {
                   <td>{cliente.contact_first_name} {cliente.contact_last_name}</td>
                   <td>{cliente.document_type}</td>
                   <td>{cliente.document_number}</td>
+                  <td>{cliente.email}</td>
                   <td>{cliente.phone}</td>
                   <td>
                     <button
