@@ -1,0 +1,90 @@
+.card-producto {
+  border: 2px solid #00a8e8;
+  border-radius: 10px;
+  padding: 1.2rem;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 510px;
+  max-width: 1370px;
+  margin: 0 auto;
+}
+
+/* Sección de productos */
+.productos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 0;
+}
+
+/* Productos normales */
+.producto-normal {
+  width: 100%;
+  max-width: 1471px; /* ✅ más angosto */
+  border: 2px solid #00aaff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background-color: #d3eeff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+.titulo-producto {
+  text-align: left;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #093e7e;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-left: 10rem;
+}
+
+.contenido-producto {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.info-producto {
+  flex: 1;
+  max-width: 900px;
+}
+
+.imagen-producto img {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
+.tabla-especificaciones {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.6rem;
+  margin-left: 1rem;
+  max-width: 700px;
+  flex: 2;
+}
+
+.tabla-especificaciones td {
+  padding: 6px 12px;
+  border: 1px solid #bde0f8;
+}
+
+.tabla-especificaciones td:first-child {
+  font-weight: bold;
+  color: #045ca4;
+  background-color: #e8f5fe;
+  width: 45%;
+}
+
+.precio-producto {
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #0077cc;
+  margin-top: -2.5rem;
+  margin-left: 47rem;
+}
