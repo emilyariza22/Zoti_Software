@@ -1,0 +1,58 @@
+.request-detail {
+  font-family: sans-serif;
+  color: #333;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.btn-descargar {
+  background-color: #28a745;
+  color: white;
+  border-radius: 7px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-descargar:hover {
+  background-color: #1d7931;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.details-table th, .details-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.details-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.totales {
+  text-align: right;
+  margin-top: 16px;
+}
+
+.aprobado {
+  margin-top: 24px;
+  font-style: italic;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+}

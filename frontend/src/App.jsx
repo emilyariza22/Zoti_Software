@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import SolicitudesTable from "./components/SolicitudesTable";
 import Clientes from "./components/Clientes";
-import Tareas from "./components/Tareas";
+import Tareas from "./components/TasksPanel";
 import Configuraciones from "./components/Configuraciones";
 import Inicio from "./components/Inicio";
 import "./styles/App.css";

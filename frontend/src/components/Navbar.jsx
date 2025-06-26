@@ -16,9 +16,6 @@ const Navbar = () => (
     <NavLink className="nav-link" to="/Panel-de-Tareas" end>
       <span className="icon">📋</span>Panel de Tareas
     </NavLink>
-    <NavLink className="nav-link" to="/Configuraciones" end>
-      <span className="icon">📋</span>Configuraciones
-    </NavLink>
   </nav>
 );
 

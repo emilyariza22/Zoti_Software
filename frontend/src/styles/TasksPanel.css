@@ -1,0 +1,236 @@
+.task-panel-container {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  padding: 18rem 4rem 4rem 4rem;
+  box-sizing: border-box;
+  border-radius: 0;
+  margin: 0;
+  position: relative;
+}
+
+.task-panel-container h3 {
+  color: #234;
+  font-weight: bold;
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+}
+
+.task-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.task-panel-header h3 {
+  font-weight: bold;
+  font-size: 3.5rem;
+  color: #234;
+  margin: 0;
+}
+
+.btn-anadir {
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-anadir:hover {
+  background: #1e7e34;
+}
+
+.table.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.09);
+}
+
+.table.task-table th,
+.table.task-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
+  font-size: 1.2rem;
+}
+
+.table.task-table th {
+  font-weight: bold;
+  background-color: #a2cefd;
+  color: #000;
+}
+
+.badge {
+  padding: 0.4em 0.8em;
+  border-radius: 8px;
+  font-size: 0.95em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.badge-warning {
+  background: #fffbe5;
+  color: #a38b00;
+}
+
+.badge-success {
+  background: #e7faef;
+  color: #15734a;
+}
+
+.badge-secondary {
+  background: #ececec;
+  color: #454545;
+}
+
+.badge-light {
+  background: #f4f4f4;
+  color: #888;
+}
+
+.btn-ver {
+  background: #2452a5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-ver:hover {
+  background: #14305e;
+}
+
+/* MODAL FORMULARIO */
+.form-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fade-in-bg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.form-modal {
+  position: relative;
+  background: #fff;
+  padding: 5rem;
+  width: 800px; /* 🔸 Ahora más grande */
+  max-width: 95%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px);}
+  to { opacity: 1; transform: none;}
+}
+
+.form-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 3rem;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+}
+.form-modal-close:hover {
+  color: #f43f5e;
+}
+
+.form-modal h2 {
+  margin-bottom: 5rem;
+  text-align: center;
+  color: #003366;
+  font-size: 3rem;
+  margin-top: -2rem;
+  margin-bottom: 2.2rem;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1 1 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #2958b8;
+  font-size: 1.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #bed3f9;
+  background: #f6faff;
+  outline: none;
+  font-size: 1rem;
+  transition: border 0.15s;
+  color: #222;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border: 1.5px solid #3266bb;
+  background: #f0f6ff;
+}
+
+.btn-submit {
+  margin-top: 16px;
+  background: #2452a5;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 13px 0;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(36, 82, 165, 0.09);
+  transition: background 0.2s, transform 0.12s;
+}
+
+.btn-submit:hover {
+  background:#4d86c7;
+  transform: translateY(-2px) scale(1.01);
+}

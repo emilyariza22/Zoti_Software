@@ -206,7 +206,7 @@ const Clientes = () => {
         <div className="clientes-header">
           <h2>Listado de Clientes</h2>
           <button className="btn-anadir" onClick={() => setMostrarFormulario(!mostrarFormulario)}>
-            {mostrarFormulario ? "Cancelar" : "Añadir"}
+            {mostrarFormulario ? "Cancelar" : "+ Añadir Cliente"}
           </button>
         </div>
         <div className="tabla-wrapper">
