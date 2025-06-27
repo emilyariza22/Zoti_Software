@@ -3,7 +3,7 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import "../styles/RequestDetail.css";
 
-function RequestDetail({ id, onClose }) {
+function RequestDetail({ id }) {
   const [request, setRequest] = useState(null);
   const printRef = useRef();
 
@@ -59,7 +59,6 @@ function RequestDetail({ id, onClose }) {
       <div className="detail-header">
         <h2 className="titulo-solicitud">{request.codigo}</h2>
         <div className="header-actions">
-          <button className="btn-cerrar" onClick={onClose}>×</button>
           <button onClick={handleDownloadPDF} className="btn-descargar">Descargar PDF</button>
         </div>
       </div>
@@ -88,8 +87,8 @@ function RequestDetail({ id, onClose }) {
             <tr key={i}>
               <td>{item.descripcion}</td>
               <td>{item.cantidad}</td>
-              <td>S/ {item.precio.toFixed(2)}</td>
-              <td>S/ {item.total.toFixed(2)}</td>
+              <td>$ {item.precio.toFixed(2)}</td>
+              <td>$ {item.total.toFixed(2)}</td>
               <td>-</td>
               <td>-</td>
               <td>-</td>
@@ -97,13 +96,13 @@ function RequestDetail({ id, onClose }) {
           ))}
           <tr>
             <td colSpan="4" style={{ textAlign: "right", fontWeight: "bold" }}>Descuento:</td>
-            <td>S/ {request.descuento.toFixed(2)}</td>
+            <td>$ {request.descuento.toFixed(2)}</td>
             <td>-</td>
             <td>-</td>
           </tr>
           <tr>
             <td colSpan="5" style={{ textAlign: "right", fontWeight: "bold" }}>IGV (IVA):</td>
-            <td>S/ {request.igv.toFixed(2)}</td>
+            <td>$ {request.igv.toFixed(2)}</td>
             <td>-</td>
           </tr>
           <tr>

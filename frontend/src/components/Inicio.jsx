@@ -14,7 +14,7 @@ const categorias = [
 const productosMock = [
   {
     id_product: 1,
-    name: "iPhone 14 Pro Max",
+    name: "Cerrar Sesion",
     categoria: "Celulares",
     description: "Pantalla Super Retina XDR y chip A16 Bionic",
     image_url: "https://via.placeholder.com/200x150",

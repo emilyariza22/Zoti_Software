@@ -1,12 +1,48 @@
 import React, { useState } from "react";
 import "../styles/SolicitudesTable.css";
 import ModalNuevaSolicitud from "./ModalNuevaSolicitud";
+import ModalProductosSolicitud from "./ModalProductosSolicitud";
 
 const estadoClass = {
   "CANCELADO": "estado-cancelado",
   "EN PROCESO": "estado-proceso",
   "ENVIADO": "estado-enviado",
   "FINALIZADO": "estado-finalizado",
+};
+
+
+const productosMock = {
+  "PR-2025-003": [
+    {
+      nombre: "Samsung Galaxy S23",
+      descripcion: "Pantalla Dynamic AMOLED 2X y cámara profesional",
+      ram: "8 GB",
+      procesador: "Snapdragon 8 Gen 2",
+      sistema: "Android",
+      precio: "$3.899.000",
+      imagen: "/img/samsung-s23.png"
+    }
+  ],
+  "PR-2025-005": [
+    {
+      nombre: "iPhone 14 Pro Max",
+      descripcion: "Pantalla Super Retina XDR y chip A16 Bionic",
+      ram: "6 GB",
+      procesador: "A16 Bionic",
+      sistema: "iOS",
+      precio: "$5.999.000",
+      imagen: "/img/iphone-14-pro-max.png"
+    },
+    {
+      nombre: "iMac 24'' M1",
+      descripcion: "Nuevo diseño con chip M1 y pantalla 4.5K",
+      ram: "8 GB",
+      procesador: "Apple M1",
+      sistema: "MacOS",
+      precio: "$8.199.000",
+      imagen: "/img/imac-24-m1.png"
+    }
+  ],
 };
 
 const solicitudesInicial = [
@@ -69,7 +105,10 @@ const solicitudesInicial = [
 
 const SolicitudesTable = () => {
   const [solicitudes, setSolicitudes] = useState(solicitudesInicial);
-  const [mostrarModal, setMostrarModal] = useState(false);
+  const [mostrarModalSolicitud, setMostrarModalSolicitud] = useState(false);
+  const [mostrarModalProductos, setMostrarModalProductos] = useState(false);
+  const [solicitudSeleccionada, setSolicitudSeleccionada] = useState(null);
+  const [productos, setProductos] = useState([]);
 
   const handleEstadoChange = (idx, nuevoEstado) => {
     const nuevasSolicitudes = solicitudes.map((s, i) =>
@@ -78,17 +117,23 @@ const SolicitudesTable = () => {
     setSolicitudes(nuevasSolicitudes);
   };
 
+const abrirModalProductos = (solicitud) => {
+  setSolicitudSeleccionada(solicitud);
+  setProductos(productosMock[solicitud.numero] || []);
+  setMostrarModalProductos(true);
+};
+
   return (
     <div className="solicitudes-container">
       <div className="solicitudes-header">
         <h2>Solicitudes de compra</h2>
         <div> 
-          <button className="nueva-solicitud" onClick={() => setMostrarModal(true)}>
+          <button className="nueva-solicitud" onClick={() => setMostrarModalSolicitud(true)}>
             + Nueva Solicitud
           </button>
           <ModalNuevaSolicitud
-            isOpen={mostrarModal}
-            onClose={() => setMostrarModal(false)}
+            isOpen={mostrarModalSolicitud}
+            onClose={() => setMostrarModalSolicitud(false)}
           />
         </div>
       </div>
@@ -111,7 +156,9 @@ const SolicitudesTable = () => {
               <td>{s.total}</td>
               <td>{s.vendedor}</td>
               <td>
-                <button className="ver-productos-btn">Ver Productos</button>
+                <button className="ver-productos-btn" onClick={() => abrirModalProductos(s)}>
+                  Ver Productos
+                </button>
               </td>
               <td>
                 <select
@@ -129,6 +176,16 @@ const SolicitudesTable = () => {
           ))}
         </tbody>
       </table>
+
+      <ModalProductosSolicitud
+        isOpen={mostrarModalProductos}
+        onClose={() => {
+          setMostrarModalProductos(false);
+          setSolicitudSeleccionada(null);
+        }}
+        productos={productos}
+        solicitud={solicitudSeleccionada}
+      />
     </div>
   );
 };
