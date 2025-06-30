@@ -1,0 +1,315 @@
+.carrito-container {
+  width: 100%;
+  max-width: 85rem;
+  margin: 200px auto 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-height: 600px;
+  position: relative;
+}
+
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100vw; /* Ocupar todo el ancho de la pantalla */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.carrito-volver {
+  background: none;
+  border: none;
+  color: #0b3d6d;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.carrito-select-all {
+  background: #55c9e0;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.carrito-title {
+  font-size: 3.3rem;
+  color: #0b3d6d;
+  margin-bottom: 2rem;
+  text-align: center;
+  margin-top: -80px;
+}
+
+.carrito-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.carrito-card {
+  background: linear-gradient(135deg, #f3f4f5 60%, #e3f0fa 100%);
+  width: 100%;
+  max-width: 77rem;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(64,163,255,0.10), 0 1.5px 6px rgba(0,0,0,0.07);
+  padding: 2.5rem 4.4rem 3.2rem 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+  border: 2.5px solid transparent;
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+  position: relative;
+}
+
+.carrito-card.seleccionado {
+  border: 2.5px solid #40a3ff;
+  background: linear-gradient(135deg, #e6f7ff 70%, #d0eaff 100%);
+  box-shadow: 0 8px 32px rgba(64,163,255,0.18), 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.carrito-card:hover {
+  box-shadow: 0 12px 36px rgba(64,163,255,0.22), 0 4px 16px rgba(0,0,0,0.13);
+  border-color: #55c9e0;
+  background: linear-gradient(135deg, #eaf6fb 60%, #d0eaff 100%);
+}
+
+.carrito-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #0b3d6d;
+  flex: 1 1 30%;
+}
+
+.carrito-card-header input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  accent-color: #40a3ff;
+  border-radius: 50%;
+  border: 2px solid #40a3ff;
+  margin-right: 0.5rem;
+}
+
+.carrito-checkbox {
+  width: 24px;
+  height: 24px;
+  accent-color: #007bff; /* opcional: color azul moderno */
+  cursor: pointer;
+  transform: scale(1.5); /* puedes aumentar este valor si quieres aún más grande */
+  margin-right: 10px;
+  margin-top: -22rem; /* Ajusta este valor para centrar verticalmente */
+}
+
+.carrito-card-info-columna {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  flex: 1 1 100%;
+  gap: 0.7rem;
+  text-align: right;
+  padding-right: 6rem;
+}
+
+.carrito-card-nombre {
+  font-size: 3.5rem;
+  color: #045ca4;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  text-align: right;
+}
+
+.carrito-card-detalles {
+  width: auto;
+  font-size: 1.7rem;
+  color: #444;
+  background: #f3f8fd;
+  border-radius: 8px;
+  padding: 2.2rem 5.5rem;
+  box-shadow: 0 1px 3px rgba(64,163,255,0.07);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  text-align: right;
+}
+
+.carrito-card-precio {
+  font-size: 2.7rem;
+  color: #0077cc;
+  font-weight: bold;
+  align-items: center;
+  text-align: center;
+  background: #eaf6fb;
+  width: 100%;
+  max-width: 330px;
+  border-radius: 10px;
+  padding: 0.7rem 1.5rem;
+  box-shadow: 0 1px 4px rgba(64,163,255,0.10);
+  margin-left: 0;
+  letter-spacing: 1px;
+  text-align: right;
+}
+
+.carrito-porcentajes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  font-size: 1.1rem;
+  color: #0b3d6d;
+  font-weight: 500;
+}
+
+.carrito-porcentajes span {
+  background: #e3f0fa;
+  border-radius: 6px;
+  padding: 0.2rem 0.7rem;
+  margin-top: 0.2rem;
+}
+
+.carrito-vacio {
+  text-align: center;
+  color: #888;
+  font-size: 1.3rem;
+  margin: 3rem 0;
+}
+
+.carrito-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.carrito-total {
+  font-size: 1.5rem;
+  color: #0b3d6d;
+  font-weight: bold;
+}
+
+.carrito-total span {
+  color: #40a3ff;
+  font-size: 1.7rem;
+  margin-left: 0.5rem;
+}
+
+.carrito-vaciar {
+  background: #ffeaea;
+  color: #d32f2f;
+  border: none;
+  border-radius: 30px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.carrito-vaciar:hover {
+  background: #ffd6d6;
+}
+
+.carrito-card-imagen {
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(64,163,255,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1.5px solid #e3f0fa;
+}
+
+.carrito-card-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f7fafc;
+}
+
+.carrito-solicitudes {
+  background: #40a3ff;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.7rem 2.2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.carrito-solicitudes:disabled {
+  background: #b3e0ff;
+  cursor: not-allowed;
+}
+
+.toast-solicitud {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #d4edda;
+  color: #155724;
+  padding: 14px 24px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 9999;
+  animation: aparecer-toast 0.3s ease, desaparecer-toast 1s 2s forwards;
+}
+
+.toast-cerrar {
+  background: transparent;
+  border: none;
+  color: #155724;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.toast-cerrar:hover {
+  color: #0b2e13;
+}
+
+@keyframes aparecer-toast {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes desaparecer-toast {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+  }
+}

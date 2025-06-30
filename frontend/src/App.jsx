@@ -8,7 +8,9 @@ import Tareas from "./components/TasksPanel";
 import Inicio from "./components/Inicio";
 import RutaProtegida from "./components/RutaProtegida";
 import LoginModal from './components/LoginModal';
+import Carrito from './components/Carrito';
 import { AuthProvider, useAuth } from "./context/AuthContext";
+import { CarritoProvider } from "./context/CarritoContext";
 import "./styles/App.css";
 
 function AppWrapper() {
@@ -40,10 +42,11 @@ function AppWrapper() {
               <Tareas />
             </RutaProtegida>
           } />
+
+          <Route path="/carrito" element={<Carrito />} />
         </Routes>
       </main>
 
-      {/* Modal de login visible globalmente */}
       <LoginModal isOpen={mostrarLogin} onClose={() => setMostrarLogin(false)} />
     </>
   );
@@ -52,9 +55,11 @@ function AppWrapper() {
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <AppWrapper />
-      </Router>
+      <CarritoProvider>
+        <Router>
+          <AppWrapper />
+        </Router>
+      </CarritoProvider>
     </AuthProvider>
   );
 }

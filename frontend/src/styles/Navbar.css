@@ -1,13 +1,14 @@
 .navbar {
   position: fixed;
-  top: 140px;           /* igual a la altura del header */
+  top: 110px;           /* igual a la altura del header */
   left: 0;
   width: 100vw;         /* ocupa todo el ancho */
+  height: 78px;        /* altura del navbar */
   z-index: 999;         /* debajo del header */
   display: flex;
   justify-content: center;
   background-color: #215a8f;
-  padding: 0.5rem 0.6rem;
+  padding: 0.4rem 0.6rem;
   gap: 1rem;
   box-sizing: border-box;
 }
@@ -16,18 +17,17 @@
   background-color: #1955a3;
   border: 1px solid #bce3f8;
   color: white;
-  padding: 0.5rem 1.2rem;
+  padding: 0.4rem 1.2rem;
   font-size: 1.3rem;
   font-weight: bold;
-  width: 180%;
+  width: 100%;
+  justify-content: center;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
-  align-items: center; /* ✅ ícono alineado con texto */
-  gap: 0.5rem; 
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
+  align-items: center;       /* Alinea icono y texto horizontalmente */
+  gap: 0.6rem;               /* Espacio entre icono y texto */
+  flex-direction: row;      /* 🔥 Asegura que el icono esté al lado izquierdo */
   transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -37,5 +37,5 @@
 }
 
 .icon {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }

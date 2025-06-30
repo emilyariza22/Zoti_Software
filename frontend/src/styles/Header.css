@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 140px;
+  height: 110px;
   background-color: #0b3d6d;
   display: flex;
   align-items: center;
@@ -59,11 +59,17 @@
   width: 80px;
   height: 80px;
   font-size: 2rem;
+  background-color: rgb(255, 255, 255);
   color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.header__icons button:hover {
+  background-color: #98eafa;
+  color: white;
 }
 
 /* ============ MENÚ DESPLEGABLE DE USUARIO ============ */

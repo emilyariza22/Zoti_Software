@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CardProducto from "./CardProducto";
+import { useCarrito } from "../context/CarritoContext";
 import "../styles/Inicio.css";
 
 const categorias = [
@@ -14,7 +15,7 @@ const categorias = [
 const productosMock = [
   {
     id_product: 1,
-    name: "Cerrar Sesion",
+    name: "Iphone 14 Pro",
     categoria: "Celulares",
     description: "Pantalla Super Retina XDR y chip A16 Bionic",
     image_url: "https://via.placeholder.com/200x150",
@@ -147,6 +148,17 @@ const productosMock = [
 const Inicio = () => {
   const [productos, setProductos] = useState([]);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("Inicio");
+  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+  const [cantidad, setCantidad] = useState(1);
+  const { agregarAlCarrito } = useCarrito();
+
+  const aumentarCantidad = () => {
+    setCantidad((prev) => (prev < 50 ? prev + 1 : prev));
+  };
+
+  const disminuirCantidad = () => {
+    setCantidad((prev) => (prev > 1 ? prev - 1 : prev));
+  };
 
   useEffect(() => {
     setProductos(productosMock);
@@ -194,11 +206,62 @@ const Inicio = () => {
       {/* Productos */}
       <section className="productos">
         {productosFiltrados.map((producto, idx) => (
-          <div key={producto.id_product + "-" + idx} className="producto-normal">
+          <div
+            key={producto.id_product + "-" + idx}
+            className="producto-normal"
+            onClick={() => setProductoSeleccionado(producto)}
+            style={{ cursor: "pointer" }}
+          >
             <CardProducto {...producto} />
           </div>
         ))}
       </section>
+
+      {/* Modal de producto ampliado */}
+      {productoSeleccionado && (
+        <div className="modal-producto-overlay-blur" onClick={() => setProductoSeleccionado(null)}>
+          <div className="modal-producto modal-producto-flex-center" onClick={e => e.stopPropagation()}>
+            <button className="modal-cerrar-simple" onClick={() => setProductoSeleccionado(null)}>✖</button>
+            <div className="modal-producto-img-lado">
+              <img src={productoSeleccionado.image_url} alt={productoSeleccionado.name} />
+            </div>
+            <div className="modal-producto-info-lado align-right">
+              <div className="modal-producto-nombre-lado">{productoSeleccionado.name}</div>
+              <div className="modal-producto-row-lado">
+                <span className="descuento-badge-lado">-67%</span>
+                <span className="precio-actual-lado">
+                  {productoSeleccionado?.price != null && !isNaN(productoSeleccionado.price)
+                    ? `$${Number(productoSeleccionado.price).toLocaleString("es-CO", { minimumFractionDigits: 2 })}`
+                    : "$0.00"}
+                </span>
+              </div>
+              <div className="modal-producto-cantidad-boton-lado">
+                <div className="cantidad-control-lado">
+                  <button onClick={disminuirCantidad} disabled={cantidad <= 1}>-</button>
+                  <input
+                    type="number"
+                    min={1}
+                    max={50}
+                    value={cantidad}
+                    readOnly
+                  />
+                  <button onClick={aumentarCantidad} disabled={cantidad >= 50}>+</button>
+                </div>
+                <button
+                  className="btn-bolsa-lado"
+                  onClick={() => {
+                    agregarAlCarrito(productoSeleccionado, cantidad);
+                    setProductoSeleccionado(null);
+                    setCantidad(1);
+                  }}
+                >
+                  Agrega al Carrito
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

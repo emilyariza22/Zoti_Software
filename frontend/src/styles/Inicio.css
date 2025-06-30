@@ -4,7 +4,7 @@
   width: 100vw; /* ✅ Ocupa todo el ancho de la pantalla */
   max-width: none;
   padding: 2rem 3rem;
-  margin-top: 256px;
+  margin-top: 200px;
   box-sizing: border-box;
   gap: 2rem;
   align-items: flex-start;
@@ -67,4 +67,201 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Modal de producto ampliado */
+/* ...todo tu css igual hasta el modal... */
+
+/* Overlay centrado y borroso */
+/* Overlay borroso y oscuro */
+/* Overlay borroso y oscuro */
+.modal-producto-overlay-blur {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 30, 30, 0.16);
+  backdrop-filter: blur(7px);
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal: flex row y centrado */
+.modal-producto-flex-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.13);
+  border: 4px solid #e9e9ee;
+  padding: 2.5rem 2.5rem;
+  max-height: 800px;
+  min-height: 400px;
+  width: 100%;
+  min-width: 600px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  gap: 2.5rem;
+  z-index: 1003;
+}
+
+/* Imagen a la izquierda, centrada verticalmente */
+.modal-producto-img-lado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  max-width: 340px;
+  min-height: 250px;
+  max-height: 270px;
+}
+.modal-producto-img-lado img {
+  width: 255px;
+  height: 255px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+}
+
+/* Info a la derecha, centrada verticalmente y alineada a la izquierda */
+.modal-producto-info-lado {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.4rem;
+}
+
+.modal-producto-info-lado.align-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;      /* <-- esto alinea todo a la derecha */
+  gap: 1.4rem;
+  height: 100%;
+  text-align: right;          /* <-- textos a la derecha */
+}
+
+.modal-producto-nombre-lado {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.2rem;
+  line-height: 1.09;
+}
+
+.modal-producto-row-lado {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.descuento-badge-lado {
+  background: #f7b6c2;
+  color: #b8004c;
+  font-weight: bold;
+  padding: 0.25em 1.1em;
+  border-radius: 8px;
+  font-size: 1.3rem;
+}
+
+.precio-actual-lado {
+  color: #111;
+  font-size: 2.6rem;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+.modal-producto-cantidad-boton-lado {
+  display: flex;
+  align-items: center;
+  gap: 1.4em;
+  margin-top: 0.6em;
+}
+
+.cantidad-control-lado {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.cantidad-control-lado button {
+  background: #b8004c;
+  color: #fff;
+  border: none;
+  width: 2.4em;
+  height: 2.4em;
+  font-size: 1.2em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.cantidad-control-lado button:hover {
+  background: #a01044;
+}
+
+.cantidad-control-lado input {
+  width: 2.8em;
+  text-align: center;
+  border: none;
+  font-size: 1.15em;
+  outline: none;
+  background: #fff;
+  color: #222;
+}
+
+/* Quitar flechas del input number en todos los navegadores */
+.cantidad-control-lado input[type="number"]::-webkit-inner-spin-button,
+.cantidad-control-lado input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cantidad-control-lado input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+/* Botón grande rosa */
+.btn-bolsa-lado {
+  background: #b8004c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9em 2.8em;
+  font-size: 1.4em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-bolsa-lado:hover {
+  background: #d81b60;
+}
+
+/* Botón cerrar arriba a la derecha */
+.modal-cerrar-simple {
+  position: absolute;
+  top: 13px;
+  right: 19px;
+  background: #f3f3f3;
+  border: none;
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  font-size: 1.4em;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
 }

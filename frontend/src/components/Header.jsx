@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaUserCircle, FaQuestionCircle, FaSignOutAlt, FaSignInAlt } from "react-icons/fa";
 import '../styles/Header.css';
+import { useNavigate } from "react-router-dom";
 import LoginModal from './LoginModal';
 import logo from '../assets/logo-zoti.png';
 import { useAuth } from '../context/AuthContext';
@@ -9,6 +10,7 @@ function Header() {
   const { usuario, login, logout } = useAuth();
   const [mostrarMenuUsuario, setMostrarMenuUsuario] = useState(false);
   const [mostrarLogin, setMostrarLogin] = useState(false);
+  const navigate = useNavigate();
 
   const menuRef = useRef();
 
@@ -43,8 +45,8 @@ function Header() {
         </div>
 
         <div className="header__icons">
-          <button title="Favoritos">❤️</button>
-          <button title="Carrito">🛒</button>
+          <button title="Favoritos">❓</button>
+          <button title="Carrito" onClick={() => navigate("/carrito")}>🛒</button>
 
           <div className="user-icon-container" ref={menuRef}>
             <button title="Perfil" onClick={() => setMostrarMenuUsuario(!mostrarMenuUsuario)}>👤

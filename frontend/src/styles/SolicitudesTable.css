@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100vw;
   height: calc(100vh - 10rem); /* Ajusta según el tamaño del header/nav */
-  padding: 17rem 3rem;
+  padding: 14rem 3rem;
   box-sizing: border-box;
   gap: 2rem;
   overflow-y: auto;
